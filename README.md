@@ -47,3 +47,4 @@ pub fn main() !void {
 - Handle streaming responses
 - Abstract system messages so they can be passed in
 - Write tests
+- Error handling
