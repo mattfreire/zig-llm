@@ -6,17 +6,17 @@ pub fn build(b: *std.Build) !void {
     const target = b.standardTargetOptions(.{});
     const optimize = b.standardOptimizeOption(.{});
 
-    // this is your own program
-    const exe = b.addExecutable(.{
-        // the name of your project
+    const lib = b.addStaticLibrary(.{
         .name = "zig-llm",
-        // your main function
-        .root_source_file = .{ .path = "main.zig" },
-        // references the ones you declared above
+        // In this case the main source file is merely a path, however, in more
+        // complicated build scripts, this could be a generated file.
+        .root_source_file = .{ .path = "src/main.zig" },
         .target = target,
         .optimize = optimize,
     });
 
-    // now install your own executable after it's built correctly
-    b.installArtifact(exe);
+    // This declares intent for the library to be installed into the standard
+    // location when the user invokes the "install" step (the default step when
+    // running `zig build`).
+    b.installArtifact(lib);
 }
