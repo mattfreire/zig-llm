@@ -1,5 +1,5 @@
 const std = @import("std");
-const openai = @import("llm/openai.zig");
+const llm = @import("src/main.zig");
 const exit = std.os.exit;
 
 pub fn main() !void {
@@ -14,13 +14,13 @@ pub fn main() !void {
         exit(1);
     }
 
-    var llm = try openai.OpenAI.init(alloc, api_key.?, organization_id.?);
-    defer llm.deinit();
+    var openai = try llm.OpenAI.init(alloc, api_key.?, organization_id.?);
+    defer openai.deinit();
 
-    const models = try llm.get_models();
+    const models = try openai.get_models();
     std.debug.print("{}", .{models});
 
-    const completion = try llm.completion("gpt-4", "Write a poem", 30, 1, false);
+    const completion = try openai.completion("gpt-4", "Write a poem", 30, 1, false);
     for (completion.choices) |choice| {
         std.debug.print("Choice:\n {s}", .{choice.message.content});
     }
