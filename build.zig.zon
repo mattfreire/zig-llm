@@ -1,4 +1,5 @@
 .{
-    .name = "zig_llm",
-    .version = "0.0.2",
+    .name = "zig-llm",
+    .version = "0.0.3",
+    .paths = .{""},
 }
