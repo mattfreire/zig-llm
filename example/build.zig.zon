@@ -1,0 +1,12 @@
+.{
+    .name = "zig-example-use",
+    .version = "0.0.1",
+    .dependencies = .{
+        .zig_llm = .{
+            // the url to the release of the module
+            .url = "https://github.com/mattfreire/zig-llm/archive/refs/tags/v0.0.3.tar.gz",
+            .hash = "1220145cd26ccbbf94dd8c23c4d66acc4fbf56cec2c876592000732ce6b7481278b9",
+        },
+    },
+    .paths = .{""},
+}
