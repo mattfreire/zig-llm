@@ -34,9 +34,7 @@ Add it to your `build.zig.zon` file:
 
 Check the example folder for how to use ZigLLM.
 
-## OpenAI Todos
+## Todos
 - Implement more endpoints from the OpenAI API
 - Handle streaming responses
-- Abstract system messages so they can be passed in
-- Write tests
-- Error handling
+- Add support for other llms

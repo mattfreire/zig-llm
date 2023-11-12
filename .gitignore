@@ -7,3 +7,4 @@ zig-out/
 /docgen_tmp/
 
 .DS_Store
+.env
