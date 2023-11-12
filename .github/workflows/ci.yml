@@ -14,7 +14,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        zig: [0.10.0, 0.11.0]
+        zig: [0.11.0]
     steps:
       - name: Checkout
         uses: actions/checkout@v3
