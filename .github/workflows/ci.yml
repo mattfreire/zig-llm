@@ -43,4 +43,4 @@ jobs:
       - name: Run unit tests
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-        run: zig build test
+        run: zig build test --summary all
